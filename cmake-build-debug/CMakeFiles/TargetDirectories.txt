@@ -1,0 +1,3 @@
+C:/Users/nacho/Documents/GitHub/Caso-Final-Integrador-Tema-3_Ignacio/cmake-build-debug/CMakeFiles/Caso_Final_Integrador_Tema_3_Ignacio.dir
+C:/Users/nacho/Documents/GitHub/Caso-Final-Integrador-Tema-3_Ignacio/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/nacho/Documents/GitHub/Caso-Final-Integrador-Tema-3_Ignacio/cmake-build-debug/CMakeFiles/rebuild_cache.dir
