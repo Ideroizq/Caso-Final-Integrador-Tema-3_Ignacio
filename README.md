@@ -111,7 +111,7 @@ Por último, ten en cuenta que este código no realiza una comprobación complet
 
 # Correccion compañero: Caso Final Integrador 3 de Alfredo Rubert
 Errores
-</details>
+
 1. Error en el manejo del buffer en la función load_script
 Problema: buf[c] = 0; podría causar un desbordamiento de buffer si fread lee el tamaño máximo de caracteres permitidos (4000).
 Solución: Cambia buf[c] = 0; por buf[c] = '\0'; y asegúrate de que el índice sea válido al agregar el carácter nulo.
@@ -127,4 +127,4 @@ Solución: Libera consoleBox al final del programa o usa un puntero inteligente 
 5. Uso de cadenas const char* en lugar de std::string
 Problema: Aunque no es un error, puedes usar std::string para evitar el uso de punteros sin formato (char*) en C++ moderno.
 Solución: Refactoriza para usar std::string en lugar de char*.
-</details>
+
