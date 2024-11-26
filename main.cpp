@@ -1,14 +1,22 @@
 //
 // Created by nacho on 11/26/2024.
 //
+//
+// Created by nacho on 11/26/2024.
+//
 
-#include "main.h"
 #include <iostream>
 #include <string>
 #include <cstdio>
 #include <stdexcept>
 
-using namespace std;
+using std::cerr;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::exception;
+using std::runtime_error;
+using std::string;
 
 // Colores de consola para resaltar la salida (opcional)
 struct ColorConsole {
@@ -46,9 +54,8 @@ void load_script(const char* filename, bool show_script = false) {
         // Lee el archivo en bloques
         char buffer[4096];
         size_t bytes_read;
-        while ((bytes_read = fread(buffer, 1, sizeof(buffer) - 1, file)) > 0) {
-            buffer[bytes_read] = '\0'; // Asegura el final de la cadena
-            script.append(buffer);
+        while ((bytes_read = fread(buffer, 1, sizeof(buffer), file)) > 0) {
+            script.append(buffer, bytes_read); // Evita problemas con buffer[bytes_read]
         }
 
         // Verifica errores de lectura
@@ -77,10 +84,10 @@ void load_script(const char* filename, bool show_script = false) {
 
 // Sobrecarga para solicitar el nombre del archivo al usuario
 void load_script() {
-    char filename[500];
+    string filename;
     cout << "Ingrese el nombre del archivo: ";
-    cin.getline(filename, sizeof(filename)); // Usa getline para evitar errores con espacios
-    load_script(filename, true); // Llama a la función principal
+    std::getline(cin, filename); // Usa getline de string para mayor seguridad
+    load_script(filename.c_str(), true); // Llama a la función principal
 }
 
 // Función principal de prueba
@@ -90,5 +97,9 @@ int main() {
     } catch (const exception& e) {
         cerr << "Se produjo un error: " << e.what() << endl;
     }
+
+    // Libera recursos
+    delete consoleBox;
+
     return 0;
 }
