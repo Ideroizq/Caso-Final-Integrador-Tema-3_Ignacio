@@ -107,3 +107,22 @@ void load_script()
 Este código debería compilar y funcionar en CLion sin necesidad de agregar la directiva _CRT_SECURE_NO_WARNINGS, ya que no se están utilizando las versiones seguras específicas de Microsoft de las funciones de la biblioteca estándar de C.
 
 Por último, ten en cuenta que este código no realiza una comprobación completa de errores y no es robusto contra varios tipos de errores de entrada. Dependiendo de tu caso de uso específico, es posible que desees agregar comprobaciones de errores adicionales y manejar los fallos de manera más sofisticada.
+
+
+## Correccion compañero: Caso Final Integrador 3 de Alfredo Rubert
+
+1. Error en el manejo del buffer en la función load_script
+Problema: buf[c] = 0; podría causar un desbordamiento de buffer si fread lee el tamaño máximo de caracteres permitidos (4000).
+Solución: Cambia buf[c] = 0; por buf[c] = '\0'; y asegúrate de que el índice sea válido al agregar el carácter nulo.
+2. No se inicializa el puntero FILE* f correctamente en el bloque try
+Problema: Si ocurre una excepción antes de que se asigne un archivo a f, el manejo de errores intenta cerrar un puntero no inicializado.
+Solución: Inicia explícitamente el puntero FILE* f = nullptr;.
+3. Desbordamiento potencial en scanf en load_script()
+Problema: Aunque el tamaño está limitado a 499 caracteres con %499s, si el usuario introduce más caracteres, puede provocar un comportamiento indefinido.
+Solución: Usa fgets en lugar de scanf.
+4. Asignación dinámica de ConsoleBox sin liberarla
+Problema: consoleBox se asigna dinámicamente con new, pero nunca se libera, lo que puede causar fugas de memoria.
+Solución: Libera consoleBox al final del programa o usa un puntero inteligente (unique_ptr o shared_ptr).
+5. Uso de cadenas const char* en lugar de std::string
+Problema: Aunque no es un error, puedes usar std::string para evitar el uso de punteros sin formato (char*) en C++ moderno.
+Solución: Refactoriza para usar std::string en lugar de char*.
