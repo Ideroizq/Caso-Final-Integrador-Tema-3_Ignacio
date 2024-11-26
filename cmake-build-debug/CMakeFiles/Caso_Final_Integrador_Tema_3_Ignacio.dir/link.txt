@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Caso_Final_Integrador_Tema_3_Ignacio.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc CMakeFiles\Caso_Final_Integrador_Tema_3_Ignacio.dir/objects.a @CMakeFiles\Caso_Final_Integrador_Tema_3_Ignacio.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\Caso_Final_Integrador_Tema_3_Ignacio.dir/objects.a -Wl,--no-whole-archive -o Caso_Final_Integrador_Tema_3_Ignacio.exe -Wl,--out-implib,libCaso_Final_Integrador_Tema_3_Ignacio.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Caso_Final_Integrador_Tema_3_Ignacio.dir\linkLibs.rsp
