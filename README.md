@@ -110,7 +110,7 @@ Por último, ten en cuenta que este código no realiza una comprobación complet
 
 
 # Correccion compañero: Caso Final Integrador 3 de Alfredo Rubert
-##Errores
+Errores
 </details>
 1. Error en el manejo del buffer en la función load_script
 Problema: buf[c] = 0; podría causar un desbordamiento de buffer si fread lee el tamaño máximo de caracteres permitidos (4000).
